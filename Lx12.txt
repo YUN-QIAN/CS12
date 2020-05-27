@@ -1,0 +1,19 @@
+C#企业级开发技术练习12答题卡
+
+班级： 19信管2    
+姓名：   萧绮清  
+学号：    26 
+
+注：请将答案放置在序号下方。*/
+
+（一）using System;using System.IO;namespace ConsoleApp17{class Program{static void Main(string[] args){using (MemoryStream mst = new MemoryStream()){byte[] buffer = { 74, 97, 118, 97, 83, 99, 114, 105, 112, 116 };foreach (int b in buffer){Console.Write((char)b);}Console.WriteLine();//按题目要求补充代码mst.Write(buffer);//按题目要求修改下行代码mst.Seek(-6,SeekOrigin.End);int r;//按题目要求修改下行代码while ((r = mst.ReadByte()) !=-1){Console.Write((char)r);}Console.WriteLine();mst.Position = 2;byte[] bf = new byte[5];//按题目要求补充代码mst.Read(bf);Console.WriteLine(BitConverter.ToString(bf));}}   }}
+
+
+（二）using System;using System.IO;namespace ConsoleApp18{class Program{static void Main(string[] args){DirectoryInfo di = new DirectoryInfo(@"d:\homeDir");di.Create();string file1 = @"d:\homeDir\homeWork4.txt";string file2 = @"d:\homeDir\homeWork5.txt";//按题目要求修改下行代码using (FileStream fs = new FileStream(file1, FileMode.OpenOrCreate)){byte[] bf = { 46, 78, 69, 84, 32, 67, 111, 114, 101 };fs.Write(bf);}using (StreamWriter sw = new StreamWriter(file2)){sw.WriteLine("name:zhang");//按题目要求修改下行代码sw.Write("age:");sw.Write(20);}//按题目要求修改下行代码foreach (var f in di.EnumerateFiles()){using (StreamReader srd = new StreamReader(f.FullName)){string str = null;//按题目要求修改下行代码while ((str = srd.ReadLine()) !=null){Console.WriteLine(str);}}}}}}
+
+
+（三）using System;using System.IO;namespace ConsoleApp17{class Program{static void Main(string[] args){using (MemoryStream mst = new MemoryStream()){byte[] buffer = { 74, 97, 118, 97, 83, 99, 114, 105, 112, 116 };foreach (int b in buffer){Console.Write((char)b);}Console.WriteLine();//按题目要求补充代码mst.Write(buffer);//按题目要求修改下行代码mst.Seek(-6,SeekOrigin.End);int r;//按题目要求修改下行代码while ((r = mst.ReadByte()) !=-1){Console.Write((char)r);}Console.WriteLine();mst.Position = 2;byte[] bf = new byte[5];//按题目要求补充代码mst.Read(bf);Console.WriteLine(BitConverter.ToString(bf));}}   }}}}}}}}}}
+
+
+
+
